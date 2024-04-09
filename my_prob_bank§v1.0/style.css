@@ -44,8 +44,11 @@ body{
     box-shadow: 0 0 5px   rgb(47, 224, 255),0 0 25px   rgb(47, 224, 255);
 }
 #num{
+    position: fixed;
     padding: 10px 20px;
     border-radius: 3em;
+    left: 50%;
+    transform: translate(-50%,-50%);
     border: 1px solid purple;
     color: blueviolet;
 }
@@ -58,7 +61,6 @@ body{
 }
 @media (max-width:550px) {
     #result{
-        top:25em;
         font-size: small;
     }
 }
