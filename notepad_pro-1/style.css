@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+}
+.next{
+    display: none;
+}
+.next textarea{
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    top: 22em;
+    height: 500px;
+    width: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: rgb(0, 216, 254);
+    animation: infinite linear fade 5S;
+    scrollbar-width:none;
+}
+.main{
+    display: block;
+    height: 200px;
+    min-width: 350px;
+    color: white;
+    background-color: rgb(51, 51, 51, 0.5);
+    font-size: 0.98em;
+    border-radius: 1rem;
+    animation: infinite linear 3s fade;   
+}
+.main:hover{
+    animation-play-state: paused;
+}
+@keyframes fade {
+    0%{
+        box-shadow: 0 0 1px rgb(0, 64, 255) ;   
+    }
+    50%{
+        box-shadow: 0 0 5px rgb(0, 64, 255) , 0 0 25px rgb(0, 64, 255);
+    }
+    100%{
+        box-shadow: 0 0 1px rgb(0, 64, 255)  ;
+    }
+}
+.main h3{
+    position: absolute;
+    text-align: center;
+    margin-top: 1.5em;
+    width: 19em;
+}
+.main #span1{
+    background: linear-gradient(45deg,blue,aqua);
+    background-clip: text;
+    color: transparent;
+}
+.main #span2{
+    background: linear-gradient(45deg,red,yellow);
+    background-clip: text;
+    color: transparent;
+}
+.main input{
+    position: absolute;
+    padding: 8px 20px ;
+    border-radius: 1rem;
+    border: none;
+    margin-top:6.5em;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    outline: none;
+}
+.main input:hover{
+    border: 2px solid green;
+}
+#button{
+    position: absolute;
+    padding: 8px 20px ;
+    border-radius: 1rem;
+    border: none;
+    margin-top:10em;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#button:hover{
+    background:linear-gradient(45deg,yellow,orange) ;
+    box-shadow: 0 0 5px orange, 0 0 15px orange  ;
+
+}
+video{
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    opacity: 50%;
+}
