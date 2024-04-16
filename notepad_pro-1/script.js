@@ -1,22 +1,27 @@
 var text = document.getElementById('textarea'); 
 var store = "";
 
-text.addEventListener('input',Autosaving()); 
-text.addEventListener('past',Autosaving()); 
-text.addEventListener('keyup',Autosaving()); 
-function Autosaving(){
-    console.log(store);
-    fetch(`https://odd-blue-dove-suit.cyclic.app/make_wet/${encodeURIComponent(store)}/${encodeURIComponent(text.value)}`)
+text.addEventListener('input',()=>{
+    var inputval = document.getElementById('key');
+    var status = document.getElementById('status');
+    console.log(inputval.value);
+    (async ()=>{
+     await fetch(`https://odd-blue-dove-suit.cyclic.app/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(text.value)}`)
        .then(response => {
+        status.innerHTML = "fetching...";
         console.log('fetching...');
         return response.json();
        })
        .then(data =>{
-        console.log("Data :",data);
+        status.innerHTML = data.key;
+        console.log("Data :",data.key);
        })
-       .catch(error => console.log("error found"));
-
-};
+       .catch(error =>{ 
+        status.innerHTML = "Api in not responding";
+        console.log("error found")
+       });
+    })();
+});
 
 function change() {
     var main = document.getElementById('main');
@@ -27,28 +32,41 @@ function change() {
     }
     var next = document.getElementById('next');
     var text = document.getElementById('textarea');
+    text.style.width = '60%';
+    text.style.height = '500px';
+    var status = document.getElementById('status');
+
     var check;
-    
-    fetch(`https://odd-blue-dove-suit.cyclic.app/fuck/${inputval.value}`)
+    status.innerHTML = "Please wait...";
+    (()=>{
+        fetch(`https://odd-blue-dove-suit.cyclic.app/fuck/${inputval.value}`)
        .then(response => {
+        status.innerHTML = "fetching...";
         console.log('fetching...');
         return response.json();
        })
        .then(data =>{
-        console.log("Data :",data);
+        console.log("Data :",data.key);
         check = data.key;
 
         if (check !== "") {
             console.log("Data is not empty")
+            status.innerHTML = "fetching existing data....";
             text.innerHTML = check;
             main.style.display = 'none';
             next.style.display = 'block';
         } else {
             console.log("Data is empty")
+            status.innerHTML = "Created empty notepad";
             text.innerHTML = '';
             main.style.display = 'none';
             next.style.display = 'block';
         }
        })
-       .catch(error => console.log("error found"));
+       .catch(error =>{ 
+        status.innerHTML = "Api is not working";
+        console.log("error found")
+       });
+    })();
+    
 }

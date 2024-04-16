@@ -12,20 +12,35 @@ body{
 }
 .next{
     display: none;
+    height: 50%;
 }
 .next textarea{
     position: absolute;
     background-color: transparent;
     border: 1px solid aqua;
     border-radius: 5px;
-    top: 22em;
-    height: 500px;
-    width: 70%;
+    top: 24em;
+    max-height: 500px;
+    max-width: 75%;
     left: 50%;
     transform: translate(-50%,-50%);
     color: rgb(0, 216, 254);
     animation: infinite linear fade 5S;
     scrollbar-width:none;
+}
+.next button{
+    position: absolute;
+    top: 3.5em;
+    margin-left: 20%;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    border: none;
+    background-color: aqua;    
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.next button:hover{
+    box-shadow: 0 0 5px aqua,0 0 15px aqua;
 }
 .main{
     display: block;
