@@ -5,7 +5,7 @@ function save(){
     var status = document.getElementById('status');
     console.log(inputval.value);
     (async ()=>{
-     await fetch(`https://odd-blue-dove-suit.cyclic.app/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(text.value)}`)
+     await fetch(`http://localhost:8080/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(text.value)}`)
        .then(response => {
         status.innerHTML = "fetching...";
         console.log('fetching...');
@@ -37,8 +37,8 @@ function change() {
 
     var check;
     status.innerHTML = "Please wait...";
-    (()=>{
-        fetch(`https://odd-blue-dove-suit.cyclic.app/fuck/${inputval.value}`)
+    (async()=>{
+        await fetch(`http://localhost:8080/fuck/${inputval.value}`)
        .then(response => {
         status.innerHTML = "fetching...";
         console.log('fetching...');
