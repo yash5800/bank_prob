@@ -50,7 +50,7 @@ function change() {
 
         if (check !== "") {
             console.log("Data is not empty")
-            status.innerHTML = "fetching existing data....";
+            status.innerHTML = "fetched existing data....";
             text.innerHTML = check;
             main.style.display = 'none';
             next.style.display = 'block';
