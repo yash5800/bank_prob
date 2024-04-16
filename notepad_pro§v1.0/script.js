@@ -1,7 +1,6 @@
 var text = document.getElementById('textarea'); 
 var store = "";
-
-text.addEventListener('input',()=>{
+function save(){
     var inputval = document.getElementById('key');
     var status = document.getElementById('status');
     console.log(inputval.value);
@@ -21,7 +20,7 @@ text.addEventListener('input',()=>{
         console.log("error found")
        });
     })();
-});
+};
 
 function change() {
     var main = document.getElementById('main');
