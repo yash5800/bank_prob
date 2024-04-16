@@ -4,11 +4,14 @@ function save(){
     var inputval = document.getElementById('key');
     var status = document.getElementById('status');
     console.log(inputval.value);
+    if(text.value === ""){
+        text.value = "none";
+    }
     (async ()=>{
-     await fetch(`https://first-api-1.onrender.com/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(text.value)}`)
+     await fetch(`http://localhost:8080/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(text.value)}`)
        .then(response => {
-        status.innerHTML = "fetching...";
-        console.log('fetching...');
+        status.innerHTML = "saving...";
+        console.log('saving...');
         return response.json();
        })
        .then(data =>{
@@ -16,7 +19,7 @@ function save(){
         console.log("Data :",data.key);
        })
        .catch(error =>{ 
-        status.innerHTML = "Api in not responding";
+        status.innerHTML = "Api Not Responding";
         console.log("error found")
        });
     })();
@@ -38,7 +41,7 @@ function change() {
     var check;
     status.innerHTML = "Please wait...";
     (async()=>{
-        await fetch(`https://first-api-1.onrender.com/fuck/${inputval.value}`)
+        await fetch(`http://localhost:8080/fuck/${inputval.value}`)
        .then(response => {
         status.innerHTML = "fetching...";
         console.log('fetching...');
@@ -46,6 +49,7 @@ function change() {
        })
        .then(data =>{
         console.log("Data :",data.key);
+        status.innerHTML = "Checking Data...";
         check = data.key;
 
         if (check !== "") {

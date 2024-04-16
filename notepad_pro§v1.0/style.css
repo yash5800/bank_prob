@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "myfont";
+    src: url('./Jersey_10_Charted,Poppins,Rajdhani/Rajdhani/Rajdhani-Bold.ttf');
+}
+#data{   
+    font-family: "myfont",sans-serif;
+    text-shadow: 0 0 1px rgb(38, 255, 0);
+    font-size: larger;
+}
 *{
     margin: 0;
     padding: 0;
@@ -19,8 +28,8 @@ body{
     background-color: transparent;
     border: 1px solid aqua;
     border-radius: 5px;
-    top: 24em;
-    max-height: 500px;
+    top: 25.2em;
+    max-height: 480px;
     max-width: 75%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -30,7 +39,7 @@ body{
 }
 .next button{
     position: absolute;
-    top: 4em;
+    top: 5.5em;
     margin-left: 20%;
     padding: 10px 20px;
     border-radius: 1rem;
@@ -40,7 +49,7 @@ body{
     transform: translate(-50%,-50%);
 }
 .next button:hover{
-    box-shadow: 0 0 5px aqua,0 0 15px aqua;
+    box-shadow: 0 0 5px aqua;
 }
 .main{
     display: block;
