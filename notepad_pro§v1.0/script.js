@@ -32,7 +32,7 @@ text.addEventListener('input',()=>{
     const send = JSON.stringify({key:inputval,val:hash});
     console.log(send);
     (async ()=>{
-     await fetch(`http://localhost:8080/make_wet/${send}`)
+     await fetch(`https://first-api-1.onrender.com/make_wet/${send}`)
        .then(response => {
         status.innerHTML = "saving...";
         console.log('saving...');
@@ -68,7 +68,7 @@ function change() {
     var check;
     status.innerHTML = "Please wait...";
     (async()=>{
-        await fetch(`http://localhost:8080/fuck/${inputval.value}`)
+        await fetch(`https://first-api-1.onrender.com/fuck/${inputval.value}`)
        .then(response => {
         status.innerHTML = "fetching...";
         console.log('fetching...');
