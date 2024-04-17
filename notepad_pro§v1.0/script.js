@@ -19,7 +19,7 @@ text.addEventListener('input',()=>{
     var status = document.getElementById('status');
     console.log(inputval);
     console.log(text.value.length)
-    size.innerHTML = `${text.value.length}/11,500`;
+    size.innerHTML = `${text.value.length}/11500`;
     if(text.value.length >= 11500){
         status.innerHTML = "Unabel no save";
         return;
@@ -85,14 +85,14 @@ function change() {
             text.innerHTML = decodeBase64(check);
             main.style.display = 'none';
             next.style.display = 'block';
-            size.innerHTML = `${text.value.length}/11,500`;
+            size.innerHTML = `${text.value.length}/11500`;
         } else {
             console.log("Data is empty")
             status.innerHTML = "Created empty notepad";
             text.innerHTML = '';
             main.style.display = 'none';
             next.style.display = 'block';
-            size.innerHTML = `0/11,500`;
+            size.innerHTML = `0/11500`;
         }
        })
        .catch(error =>{ 

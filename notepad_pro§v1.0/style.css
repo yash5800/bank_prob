@@ -29,7 +29,7 @@ body{
 }
 @media (max-width:500px) {
     #size{
-        bottom: -20%;
+        bottom:0;
     }
 }
 .next{
