@@ -1,5 +1,6 @@
 var text = document.getElementById('textarea'); 
 var store = "";
+var size = document.getElementById('size');
 
 function encodeBase64(text) {
     var latin1Text = encodeURIComponent(text).replace(/%([0-9A-F]{2})/g, function(match, p1) {
@@ -13,18 +14,25 @@ function decodeBase64(encodedText) {
     return decodeURIComponent(encodeURIComponent(latin1Text)); // Convert Latin1-compatible text back to Unicode characters
 }
 
-function save(){
-    var inputval = document.getElementById('key');
+text.addEventListener('input',()=>{
+    var inputval = document.getElementById('key').value;
     var status = document.getElementById('status');
-    console.log(inputval.value);
-    
+    console.log(inputval);
+    console.log(text.value.length)
+    size.innerHTML = `${text.value.length}/11,500`;
+    if(text.value.length >= 11500){
+        status.innerHTML = "Unabel no save";
+        return;
+    }
     if(text.value === ""){
         text.value = "none";
     }
     const hash = encodeBase64(text.value);
     console.log(hash);
+    const send = JSON.stringify({key:inputval,val:hash});
+    console.log(send);
     (async ()=>{
-     await fetch(`https://first-api-1.onrender.com/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(hash)}`)
+     await fetch(`http://localhost:8080/make_wet/${send}`)
        .then(response => {
         status.innerHTML = "saving...";
         console.log('saving...');
@@ -36,10 +44,11 @@ function save(){
        })
        .catch(error =>{ 
         status.innerHTML = "Api Not Responding";
-        console.log("error found")
+        console.log("error found");
        });
     })();
-};
+});
+
 
 function change() {
     var main = document.getElementById('main');
@@ -59,7 +68,7 @@ function change() {
     var check;
     status.innerHTML = "Please wait...";
     (async()=>{
-        await fetch(`https://first-api-1.onrender.com/fuck/${inputval.value}`)
+        await fetch(`http://localhost:8080/fuck/${inputval.value}`)
        .then(response => {
         status.innerHTML = "fetching...";
         console.log('fetching...');
@@ -76,12 +85,14 @@ function change() {
             text.innerHTML = decodeBase64(check);
             main.style.display = 'none';
             next.style.display = 'block';
+            size.innerHTML = `${text.value.length}/11,500`;
         } else {
             console.log("Data is empty")
             status.innerHTML = "Created empty notepad";
             text.innerHTML = '';
             main.style.display = 'none';
             next.style.display = 'block';
+            size.innerHTML = `0/11,500`;
         }
        })
        .catch(error =>{ 

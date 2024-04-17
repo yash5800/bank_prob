@@ -19,6 +19,12 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: black;
 }
+#size{
+    position: absolute;
+    color: aliceblue;
+    top:118vh;
+    padding-bottom: 20px;
+}
 .next{
     display: none;
     height: 50%;
