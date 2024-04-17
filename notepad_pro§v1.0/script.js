@@ -80,7 +80,7 @@ function change() {
         check = data.key;
 
         if (check !== "") {
-            console.log("Data is not empty")
+            console.log("Data is not empty");
             status.innerHTML = "fetched existing data....";
             text.innerHTML = decodeBase64(check);
             main.style.display = 'none';
