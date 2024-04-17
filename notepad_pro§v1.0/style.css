@@ -22,8 +22,10 @@ body{
 #size{
     position: absolute;
     color: aliceblue;
-    top:118vh;
+    margin-top:28.5em;
     padding-bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .next{
     display: none;

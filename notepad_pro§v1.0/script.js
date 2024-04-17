@@ -31,11 +31,11 @@ text.addEventListener('input',()=>{
     console.log(hash);
     const send = JSON.stringify({key:inputval,val:hash});
     console.log(send);
+    status.innerHTML = "saving...";
     (async ()=>{
      await fetch(`https://first-api-1.onrender.com/make_wet/${send}`)
        .then(response => {
-        status.innerHTML = "saving...";
-        console.log('saving...');
+        console.log('auto saving...');
         return response.json();
        })
        .then(data =>{
