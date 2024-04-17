@@ -1,14 +1,30 @@
 var text = document.getElementById('textarea'); 
 var store = "";
+
+function encodeBase64(text) {
+    var latin1Text = encodeURIComponent(text).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+        return String.fromCharCode(parseInt(p1, 16));
+    }); // Convert Unicode characters to Latin1-compatible format
+    return btoa(latin1Text);
+}
+
+function decodeBase64(encodedText) {
+    var latin1Text = atob(encodedText);
+    return decodeURIComponent(encodeURIComponent(latin1Text)); // Convert Latin1-compatible text back to Unicode characters
+}
+
 function save(){
     var inputval = document.getElementById('key');
     var status = document.getElementById('status');
     console.log(inputval.value);
+    
     if(text.value === ""){
         text.value = "none";
     }
+    const hash = encodeBase64(text.value);
+    console.log(hash);
     (async ()=>{
-     await fetch(`https://first-api-1.onrender.com/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(text.value)}`)
+     await fetch(`https://first-api-1.onrender.com/make_wet/${encodeURIComponent(inputval.value)}/${encodeURIComponent(hash)}`)
        .then(response => {
         status.innerHTML = "saving...";
         console.log('saving...');
@@ -57,7 +73,7 @@ function change() {
         if (check !== "") {
             console.log("Data is not empty")
             status.innerHTML = "fetched existing data....";
-            text.innerHTML = check;
+            text.innerHTML = decodeBase64(check);
             main.style.display = 'none';
             next.style.display = 'block';
         } else {
