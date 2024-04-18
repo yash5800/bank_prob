@@ -154,13 +154,50 @@ body{
     box-shadow: 0 0 5px orange, 0 0 15px orange  ;
 
 }
-video{
-    position: fixed;
-    width: 100%;
+#loading{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 5em;
+    height: 3em;
+    border-radius: 2rem;
+    background-color: black;
     z-index: -1;
-    height: 100%;
-    left: 0;
-    top: 0;
-    object-fit: cover;
-    opacity: 50%;
+    left: 1em;
+    top: 3.2em;
+    overflow: hidden;
+}
+#loading::before{
+    position: absolute;
+    content: "";
+    background: linear-gradient(45deg,white,blue);
+    width: 25px;
+    height: 100px;
+    filter: blur(10px);
+    animation: infinite linear 1.5s rotate;
+}
+#loading::after{
+    position: absolute;
+    content: "";
+    inset: 1.5px;
+    background-color: black;
+    border-radius: 2rem;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(90deg);
+    }
+    25%{
+        transform: rotate(360deg)
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(245deg)
+    }
+    100%{
+        transform: rotate(90deg)
+    }
 }

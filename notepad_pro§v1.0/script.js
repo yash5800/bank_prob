@@ -14,7 +14,9 @@ function decodeBase64(encodedText) {
     return decodeURIComponent(encodeURIComponent(latin1Text)); // Convert Latin1-compatible text back to Unicode characters
 }
 
-text.addEventListener('input',()=>{
+
+
+function save(){
     var inputval = document.getElementById('key').value;
     var status = document.getElementById('status');
     console.log(inputval);
@@ -30,8 +32,10 @@ text.addEventListener('input',()=>{
     const hash = encodeBase64(text.value);
     console.log(hash);
     const send = JSON.stringify({key:inputval,val:hash});
-    console.log(send);
-    status.innerHTML = "saving...";
+    console.log(send)
+    status.style.color = "green";
+    status.innerHTML = "saving..";
+    document.getElementById('loading').style.display = 'flex';
     (async ()=>{
      await fetch(`https://first-api-1.onrender.com/make_wet/${send}`)
        .then(response => {
@@ -39,15 +43,17 @@ text.addEventListener('input',()=>{
         return response.json();
        })
        .then(data =>{
+        document.getElementById('loading').style.display = 'none';
         status.innerHTML = data.key;
         console.log("Data :",data.key);
        })
        .catch(error =>{ 
+        document.getElementById('loading').style.display = 'none';
         status.innerHTML = "Api Not Responding";
         console.log("error found");
        });
     })();
-});
+};
 
 
 function change() {
@@ -81,7 +87,7 @@ function change() {
 
         if (check !== "") {
             console.log("Data is not empty");
-            status.innerHTML = "fetched existing data....";
+            status.innerHTML = "Fetched Data";
             text.innerHTML = decodeBase64(check);
             main.style.display = 'none';
             next.style.display = 'block';
@@ -96,7 +102,7 @@ function change() {
         }
        })
        .catch(error =>{ 
-        status.innerHTML = "Api is not working";
+        status.innerHTML = "Try again";
         console.log("error found")
        });
     })();
