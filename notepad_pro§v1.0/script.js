@@ -33,7 +33,7 @@ function save(){
     console.log(hash);
     const send = JSON.stringify({key:inputval,val:hash});
     console.log(send)
-    status.style.color = "green";
+    status.style.color = "yellow";
     status.innerHTML = "saving..";
     document.getElementById('loading').style.display = 'flex';
     (async ()=>{
@@ -107,4 +107,32 @@ function change() {
        });
     })();
     
+}
+
+function send(){
+    var email = document.getElementById('email').value;
+    if(email == ""){
+        return null;
+    }
+    var status = document.getElementById('status');    
+    status.style.color = "yellow";
+    status.innerHTML = "sending..";
+    document.getElementById('loading').style.display = 'flex';
+    var inputval = document.getElementById('key').value;
+    (async()=>{
+     await fetch(`https://second-api-uvq4.onrender.com/submit/${email}/${inputval}`,{ method: 'POST' })
+       .then(response =>{
+          return response.json();
+       })
+       .then(data => {
+          document.getElementById('loading').style.display = 'none';
+          console.log("Data :",data.key);
+          status.innerHTML = data.key;
+       })
+       .catch(error =>{ 
+        document.getElementById('loading').style.display = 'none';
+        status.innerHTML = "email not sent";
+        console.error(error);
+       });
+    })();
 }
