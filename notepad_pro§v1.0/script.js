@@ -140,3 +140,37 @@ function send(){
        });
     })();
 }
+
+function del(){
+    var inputval = document.getElementById('key').value;
+    var status = document.getElementById('status');
+    var main = document.getElementById('main');
+    var next = document.getElementById('next');
+    console.log(inputval);
+    if(text.value === "none" || text.value === ""){
+        return null;
+    }
+    status.style.color = "red";
+    status.innerHTML = "deleting..";
+    document.getElementById('loading').style.display = 'flex';
+    (async ()=>{
+     await fetch(`http://localhost:8080/wipe/${inputval}`)
+       .then(response => {
+        console.log('deleting...');
+        return response.json();
+       })
+       .then(data =>{
+        main.style.display = "flex";
+        next.style.display = "none";
+        document.getElementById('loading').style.display = 'none';
+        status.innerHTML = data.key;
+
+        console.log("Data :",data.key);
+       })
+       .catch(error =>{ 
+        document.getElementById('loading').style.display = 'none';
+        status.innerHTML = "Api Not Responding";
+        console.log("error found");
+       });
+    })();
+};

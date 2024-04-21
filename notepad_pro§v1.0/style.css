@@ -4,8 +4,10 @@
 }
 #data{   
     font-family: "myfont",sans-serif;
-    text-shadow: 0 0 1px rgb(38, 255, 0);
+    background: linear-gradient(-45deg,rgb(0, 255, 0),rgba(0, 85, 255, 0.868));
     font-size: larger;
+    background-clip: text;
+    color: transparent;
 }
 *{
     margin: 0;
@@ -95,6 +97,20 @@ body{
     border: 1px solid aqua;
     background: transparent;
     color: aliceblue;
+}
+.next #del{
+    position: absolute;
+    top: 5.5em;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    border: none;
+    background-color: rgb(255, 38, 38);    
+    left: 48%;
+    transform: translate(-50%,-50%);
+    color: rgba(230, 243, 255, 0.845);
+}
+.next #del:hover{
+    box-shadow: 0 0 5px rgb(255, 38, 38);
 }
 #email::placeholder{
     color: aqua;
