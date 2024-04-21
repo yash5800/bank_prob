@@ -70,7 +70,7 @@ function change() {
     text.style.width = '60%';
     text.style.height = '500px';
     var status = document.getElementById('status');
-
+    status.style.color = "white";
     var check;
     status.innerHTML = "Please wait...";
     (async()=>{
@@ -154,7 +154,7 @@ function del(){
     status.innerHTML = "deleting..";
     document.getElementById('loading').style.display = 'flex';
     (async ()=>{
-     await fetch(`http://localhost:8080/wipe/${inputval}`)
+     await fetch(`https://first-api-6bmo.onrender.com/wipe/${inputval}`)
        .then(response => {
         console.log('deleting...');
         return response.json();
@@ -164,7 +164,6 @@ function del(){
         next.style.display = "none";
         document.getElementById('loading').style.display = 'none';
         status.innerHTML = data.key;
-
         console.log("Data :",data.key);
        })
        .catch(error =>{ 
