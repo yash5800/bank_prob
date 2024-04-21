@@ -144,8 +144,6 @@ function send(){
 function del(){
     var inputval = document.getElementById('key').value;
     var status = document.getElementById('status');
-    var main = document.getElementById('main');
-    var next = document.getElementById('next');
     console.log(inputval);
     if(text.value === "none" || text.value === ""){
         return null;
@@ -160,9 +158,8 @@ function del(){
         return response.json();
        })
        .then(data =>{
-        main.style.display = "flex";
-        next.style.display = "none";
         document.getElementById('loading').style.display = 'none';
+        location.reload();
         status.innerHTML = data.key;
         console.log("Data :",data.key);
        })
