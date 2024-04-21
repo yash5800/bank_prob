@@ -154,7 +154,7 @@ function del(){
     status.innerHTML = "deleting..";
     document.getElementById('loading').style.display = 'flex';
     (async ()=>{
-     await fetch(`https://first-api-6bmo.onrender.com/wipe/${inputval}`)
+     await fetch(`https://first-api-1.onrender.com/wipe/${inputval}`)
        .then(response => {
         console.log('deleting...');
         return response.json();
