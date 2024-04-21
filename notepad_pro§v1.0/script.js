@@ -114,6 +114,10 @@ function send(){
     if(email == ""){
         return null;
     }
+    if(text.value == "none"){
+        status.innerHTML = "email not sent";
+        return null;
+    }
     var status = document.getElementById('status');    
     status.style.color = "yellow";
     status.innerHTML = "sending..";
