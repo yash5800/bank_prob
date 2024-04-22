@@ -2,12 +2,47 @@
     font-family: "myfont";
     src: url('./Jersey_10_Charted,Poppins,Rajdhani/Rajdhani/Rajdhani-Bold.ttf');
 }
-#data{   
+.title #p1{   
     font-family: "myfont",sans-serif;
-    background: linear-gradient(-45deg,rgb(0, 255, 0),rgba(0, 85, 255, 0.868));
-    font-size: larger;
+    background: linear-gradient(-45deg,rgba(234, 255, 234, 0.496),rgba(0, 85, 255, 0.868));
+    font-size: 3em;
     background-clip: text;
     color: transparent;
+    position:absolute;
+    width: fit-content;
+    top:0.3em;
+}
+.title #p2{   
+    font-family: "myfont",sans-serif;
+    background:rgba(255, 255, 255, 0.693);
+    font-size: 1.5em;
+    background-clip: text;
+    color: transparent;
+    position:absolute;
+    width: fit-content;
+    top: 2.5em;
+    margin-left: -4em;
+    
+}
+.title #p3{   
+    font-family: "myfont",sans-serif;
+    background:linear-gradient(45deg,rgba(255, 255, 255, 0.696),rgba(37, 101, 228, 0.868));
+    font-size: 1.5em;
+    background-clip: text;
+    color: transparent;
+    position:absolute;
+    width: fit-content;
+    top: 2.5em;
+    margin-left:4em ;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    position:absolute;
+    top:0;
+    /* border: 1px solid white; */
 }
 *{
     margin: 0;
@@ -26,8 +61,6 @@ img{
 body{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: black;
 }
@@ -127,27 +160,30 @@ body{
     transform: translate(-50%,-50%);
 }
 .main{
+    position: absolute;
+    top: 50%;
     display: block;
     height: 200px;
     min-width: 350px;
     color: white;
-    background-color: rgb(51, 51, 51, 0.5);
+    background: linear-gradient(45deg,rgba(41, 41, 41, 0.5),rgb(81, 30, 111));
     font-size: 0.98em;
     border-radius: 1rem;
-    animation: infinite linear 3s fade;   
+    animation: infinite linear 3s fade;  
+    border: 0.1px white solid; 
 }
 .main:hover{
     animation-play-state: paused;
 }
 @keyframes fade {
     0%{
-        box-shadow: 0 0 1px rgb(0, 64, 255) ;   
+        box-shadow: 0 0 1px rgba(255, 41, 234, 0.351) ;   
     }
     50%{
-        box-shadow: 0 0 5px rgb(0, 64, 255) , 0 0 25px rgb(0, 64, 255);
+        box-shadow: 0 0 5px rgba(255, 41, 234, 0.351) , 0 0 75px rgba(255, 41, 234, 0.351);
     }
     100%{
-        box-shadow: 0 0 1px rgb(0, 64, 255)  ;
+        box-shadow: 0 0 5px rgba(255, 41, 234, 0.351)  ;
     }
 }
 .main h3{
@@ -240,3 +276,55 @@ body{
         transform: rotate(90deg)
     }
 }
+
+
+.logo_main{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+
+ }
+ #logo{
+     position: absolute;
+     width: 80%;
+ }
+ .logo_main path:nth-child(1),.logo_main path:nth-child(3),
+ .logo_main path:nth-child(4),.logo_main path:nth-child(5),
+ .logo_main path:nth-child(6),.logo_main path:nth-child(7),
+ .logo_main path:nth-child(8),.logo_main path:nth-child(9),
+ .logo_main path:nth-child(10),.logo_main path:nth-child(12),
+ .logo_main path:nth-child(13){
+     animation: infinite 5s linear fade1 ;
+
+ }
+ .logo_main path:nth-child(11) {
+    stroke-dasharray: 572;
+    stroke-dashoffset: 572;
+    animation: infinite linear roll 5s;
+ }
+ .logo_main path:nth-child(2) {
+     stroke-dasharray: 300;
+     stroke-dashoffset: 300;
+     animation: infinite linear roll 5s;
+  }
+
+ @keyframes roll {
+     to{
+         stroke-dasharray: 0;
+     }
+ }
+ @keyframes fade1{
+     0%{
+         opacity: 100%;
+     }
+     50%{
+         opacity: 50%;
+     }
+     100%{
+         opacity: 100%;
+     }
+ }

@@ -59,6 +59,7 @@ function save(){
 function change() {
     var main = document.getElementById('main');
     var inputval = document.getElementById('key');
+    var loading = document.getElementById("logo_main");
     store = inputval.value;
     
     if (key.value === '') {
@@ -73,6 +74,9 @@ function change() {
     status.style.color = "white";
     var check;
     status.innerHTML = "Please wait...";
+    document.body.style.overflow = 'hidden';
+    loading.style.display = 'flex';
+    
     (async()=>{
         await fetch(`https://first-api-1.onrender.com/fuck/${inputval.value}`)
        .then(response => {
@@ -84,7 +88,8 @@ function change() {
         console.log("Data :",data.key);
         status.innerHTML = "Checking Data...";
         check = data.key;
-
+        loading.style.display = 'none';
+        document.body.style.overflow = 'auto';
         if (check !== "") {
             console.log("Data is not empty");
             status.innerHTML = "Fetched Data";
@@ -102,6 +107,8 @@ function change() {
         }
        })
        .catch(error =>{ 
+        document.body.style.overflow = 'auto';
+        loading.style.display = 'none';
         status.innerHTML = "Try again";
         console.log("error found")
        });
