@@ -79,7 +79,7 @@ body{
 #size{
     position: absolute;
     color: aliceblue;
-    top: 37em;   
+    top: 39.8em;   
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -93,7 +93,7 @@ body{
     background-color: transparent;
     border: 1px solid aqua;
     border-radius: 5px;
-    top: 25.2em;
+    top: 28.5em;
     max-height: 480px;
     max-width: 75%;
     left: 50%;
@@ -104,7 +104,7 @@ body{
 }
 .next #nextbut{
     position: absolute;
-    top: 5.5em;
+    top: 8.5em;
     margin-left: 20%;
     padding: 10px 20px;
     border-radius: 1rem;
@@ -118,7 +118,7 @@ body{
 }
 .next #email{
     position: absolute;
-    top: 48em; 
+    top: 50.5em; 
     left: 50%;
     transform: translate(-50%,-50%);
     padding: 5px 18px;
@@ -129,7 +129,7 @@ body{
 }
 .next #del{
     position: absolute;
-    top: 5.5em;
+    top: 8.5em;
     padding: 10px 18px;
     border-radius: 1rem;
     border: none;
@@ -151,7 +151,7 @@ body{
 }
 .next #send{
     position: absolute;
-    top: 51em;
+    top: 54em;
     padding: 8px 20px;
     border-radius: 1rem;
     border: none;
