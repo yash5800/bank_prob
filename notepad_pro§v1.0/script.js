@@ -110,7 +110,7 @@ function change() {
         document.body.style.overflow = 'auto';
         loading.style.display = 'none';
         status.innerHTML = "Try again";
-        console.log("error found")
+        console.log("error found");
        });
     })();
     
