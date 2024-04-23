@@ -4,13 +4,14 @@
 }
 .title #p1{   
     font-family: "myfont",sans-serif;
-    background: linear-gradient(-45deg,rgba(234, 255, 234, 0.496),rgba(0, 85, 255, 0.868));
+    background: linear-gradient(-45deg,rgba(234, 255, 234, 0.496),rgba(13,255,0));
     font-size: 3em;
     background-clip: text;
     color: transparent;
     position:absolute;
     width: fit-content;
     top:0.3em;
+    margin-left: -0.5em;
 }
 .title #p2{   
     font-family: "myfont",sans-serif;
@@ -26,7 +27,7 @@
 }
 .title #p3{   
     font-family: "myfont",sans-serif;
-    background:linear-gradient(45deg,rgba(255, 255, 255, 0.696),rgba(37, 101, 228, 0.868));
+    background:linear-gradient(45deg,rgba(255, 255, 255, 0.696),rgb(13, 255, 0));
     font-size: 1.5em;
     background-clip: text;
     color: transparent;
@@ -285,9 +286,40 @@ body{
     left: 0;
     top: 0;
 }
+
 #back{
    height: 100%;
    width: 100%;
+   animation: infinite roll 5s forwards linear;
+   stroke-dasharray: 50;
+}
+
+#cir{
+    position: fixed;
+    left: -3em;
+    top:-3em;
+    stroke-dasharray: 10;
+    animation: infinite cir_rot 5s linear;
+}
+
+@keyframes cir_rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(360deg);
+        stroke-dasharray: 5;
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-360deg);
+        stroke-dasharray: 5;
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }
 
 .logo_main{
