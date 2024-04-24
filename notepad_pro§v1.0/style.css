@@ -15,17 +15,14 @@
     font-size: 2.5em;
     font-style:italic;
     overflow: hidden;
+    border-radius: 5px;
 }
 @media (max-width:340px) {
     #div{
         font-size: 2em;
     }
 }
-@media (max-width:275px) {
-    #div{
-        font-size: 1.5em;
-    }
-}
+
 #div::before{
     z-index: -10;
     position: absolute;
@@ -44,6 +41,11 @@
     inset: 1px;
     z-index: -5;
     background-color: #0D1F21;
+    border-radius: 5px;
+}
+
+#div:hover{
+    cursor: pointer;
 }
 
 @keyframes rot {
@@ -106,6 +108,15 @@ body{
     transform: translate(-50%,-50%);
 }
 
+#status{
+    position:absolute;
+    top:6.5em;
+    color:rgb(255, 255, 255);
+    left:1.6em;
+   
+}
+
+
 .next{
     display: none;
     height: 50%;
@@ -137,6 +148,7 @@ body{
 }
 .next button:hover{
     box-shadow: 0 0 5px aqua;
+    cursor: pointer;
 }
 .next #email{
     position: absolute;
@@ -160,12 +172,26 @@ body{
     transform: translate(-50%,-50%);
     color: rgba(230, 243, 255, 0.845);
 }
+
+@media (max-width:375px) {
+    #status{
+        font-size: 0.85em;
+    }
+    .next #nextbut{
+        margin-left: 18%;
+        padding: 8px 17px;
+    }
+    .next #del{
+        padding: 8px 17px;
+    }
+}
 @media (max-width:550px) {
     .next #del{
         left: 90%;   
     }
 }
 .next #del:hover{
+    cursor: pointer;
     box-shadow: 0 0 5px rgb(255, 38, 38);
 }
 #email::placeholder{
@@ -245,10 +271,12 @@ body{
     margin-top:10em;
     left: 50%;
     transform: translate(-50%,-50%);
+    
 }
 #button:hover{
     background:linear-gradient(45deg,yellow,orange) ;
     box-shadow: 0 0 5px orange, 0 0 15px orange  ;
+    cursor: pointer;
 
 }
 #loading{
@@ -256,13 +284,13 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 5em;
+    width: 10em;
     height: 3em;
     border-radius: 2rem;
-    background-color: black;
+    background-color:#0D1F21;
     z-index: -1;
     left: 1em;
-    top: 5.8em;
+    top: 5.4em;
     overflow: hidden;
 }
 #loading::before{
@@ -272,13 +300,13 @@ body{
     width: 25px;
     height: 100px;
     filter: blur(10px);
-    animation: infinite linear 1.5s rotate;
+    animation: infinite linear 0.5s rotate;
 }
 #loading::after{
     position: absolute;
     content: "";
     inset: 1.5px;
-    background-color: black;
+    background-color:#0D1F21;
     border-radius: 2rem;
 }
 @keyframes rotate {

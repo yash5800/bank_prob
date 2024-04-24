@@ -34,7 +34,7 @@ function save(){
     const send = JSON.stringify({key:inputval,val:hash});
     console.log(send)
     status.style.color = "yellow";
-    status.innerHTML = "saving..";
+    status.innerHTML = "Sending To Dimension";
     document.getElementById('loading').style.display = 'flex';
     (async ()=>{
      await fetch(`https://first-api-1.onrender.com/make_wet/${send}`)
@@ -44,7 +44,7 @@ function save(){
        })
        .then(data =>{
         document.getElementById('loading').style.display = 'none';
-        status.innerHTML = data.key;
+        status.innerHTML = "Sended To Dimension";
         console.log("Data :",data.key);
        })
        .catch(error =>{ 
@@ -90,7 +90,7 @@ function change() {
         check = data.key;
         loading.style.display = 'none';
         document.body.style.overflow = 'auto';
-        if (check !== "") {
+        if (check !== "" && check !== "created !!") {
             console.log("Data is not empty");
             status.innerHTML = "Fetched Data";
             text.innerHTML = decodeBase64(check);
@@ -99,7 +99,7 @@ function change() {
             size.innerHTML = `${text.value.length}/11500`;
         } else {
             console.log("Data is empty")
-            status.innerHTML = "Created empty notepad";
+            status.innerHTML = "Here! you have it";
             text.innerHTML = '';
             main.style.display = 'none';
             next.style.display = 'block';
@@ -110,7 +110,7 @@ function change() {
         document.body.style.overflow = 'auto';
         loading.style.display = 'none';
         status.innerHTML = "Try again";
-        console.log("error found");
+        console.log("error found",error);
        });
     })();
     
@@ -156,7 +156,7 @@ function del(){
         return null;
     }
     status.style.color = "red";
-    status.innerHTML = "deleting..";
+    status.innerHTML = "Throwing to Void";
     document.getElementById('loading').style.display = 'flex';
     (async ()=>{
      await fetch(`https://first-api-1.onrender.com/wipe/${inputval}`)
@@ -166,8 +166,8 @@ function del(){
        })
        .then(data =>{
         document.getElementById('loading').style.display = 'none';
+        status.innerHTML = "Thrown to Void" ;
         location.reload();
-        status.innerHTML = data.key;
         console.log("Data :",data.key);
        })
        .catch(error =>{ 
@@ -177,3 +177,8 @@ function del(){
        });
     })();
 };
+
+
+document.getElementById('div').addEventListener('click',()=>{
+   location.reload();
+});
