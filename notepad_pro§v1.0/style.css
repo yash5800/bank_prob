@@ -16,6 +16,11 @@
     font-style:italic;
     overflow: hidden;
 }
+@media (max-width:340px) {
+    #div{
+        font-size: 2em;
+    }
+}
 #div::before{
     z-index: -10;
     position: absolute;
