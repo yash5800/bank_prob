@@ -173,18 +173,7 @@ body{
     color: rgba(230, 243, 255, 0.845);
 }
 
-@media (max-width:375px) {
-    #status{
-        font-size: 0.85em;
-    }
-    .next #nextbut{
-        margin-left: 18%;
-        padding: 8px 17px;
-    }
-    .next #del{
-        padding: 8px 17px;
-    }
-}
+
 @media (max-width:550px) {
     .next #del{
         left: 90%;   
@@ -421,3 +410,23 @@ body{
          opacity: 100%;
      }
  }
+
+
+
+
+ @media (max-width:375px) {
+    #status{
+        top: 7em;
+        font-size: 0.85em;
+    }
+    .next #nextbut{
+        margin-left: 18%;
+        padding: 8px 17px;
+    }
+    .next #del{
+        padding: 8px 17px;
+    }
+    #loading{
+        height: 2em;
+    }
+}
