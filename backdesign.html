@@ -5,44 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        *{          
             margin: 0;
             padding: 0;
+        }
+        body{
+            display: flex;
             background-color: #0D1F21;
+            justify-content: center;
           }
-        .svg-container{
-            position: fixed;
-            height: 100%;
-            width: 100%;
+        #div{
+            top:1em;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(45deg,rgb(177, 0, 204),rgba(255, 192, 203, 0.856));
+            background-clip: text;
+            color: transparent;
+            font-size: 3em;
+            font-style: italic;
+            overflow: hidden;
+        }
+        #div::before{
             z-index: -10;
-            left: 0;
-            top: 0;
+            position: absolute;
+            content: '';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 500px;
+            background: linear-gradient(rgba(255, 255, 255, 0.91),purple);
+            animation: infinite linear 13s rot;
         }
-        #back{
-           height: 100%;
-           width: 100%;
+        #div::after{
+            position: absolute;
+            content: '';
+            inset: 1px;
+            z-index: -5;
+            background-color: #0D1F21;
         }
+
+        @keyframes rot {
+            0%{
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(180deg);
+            }
+            50%{
+                transform: rotate(360deg);
+            }
+            75%{
+                transform: rotate(-180deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+
+        
     </style>
 </head>
 <body>
-    <div class="svg-container">
-                
-        <svg id="back" width="731" height="720" viewBox="0 0 731 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_b_1_4)">
-            <path d="M729.651 -3.26439L716.411 39.2705C701.768 86.3131 677.579 129.83 645.357 167.1L637.528 176.155C600.581 218.89 552.808 250.888 499.226 268.789V268.789C410.148 298.55 339.024 366.551 305.296 454.205L289.635 494.905C247.94 603.265 161.963 688.667 53.3266 729.634L0.523987 749.546" stroke="#00FFFF" stroke-linecap="round"/>
-            </g>
-            <defs>
-            <filter id="filter0_b_1_4" x="-3.97615" y="-7.76453" width="738.127" height="761.811" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feGaussianBlur in="BackgroundImageFix" stdDeviation="2"/>
-            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_4"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_4" result="shape"/>
-            </filter>
-            </defs>
-                
-            </svg>
-            
-            
-    </div>
+    <div id="div"> Next Dimension </div>
 </body>
 </html>

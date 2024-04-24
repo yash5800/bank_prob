@@ -2,49 +2,60 @@
     font-family: "myfont";
     src: url('./Jersey_10_Charted,Poppins,Rajdhani/Rajdhani/Rajdhani-Bold.ttf');
 }
-.title #p1{   
-    font-family: "myfont",sans-serif;
-    background: linear-gradient(-45deg,rgba(234, 255, 234, 0.496),rgba(13,255,0));
-    font-size: 3em;
-    background-clip: text;
-    color: transparent;
-    position:absolute;
-    width: fit-content;
-    top:0.3em;
-    margin-left: -0.5em;
-}
-.title #p2{   
-    font-family: "myfont",sans-serif;
-    background:rgba(255, 255, 255, 0.693);
-    font-size: 1.5em;
-    background-clip: text;
-    color: transparent;
-    position:absolute;
-    width: fit-content;
-    top: 2.5em;
-    margin-left: -4em;
-    
-}
-.title #p3{   
-    font-family: "myfont",sans-serif;
-    background:linear-gradient(45deg,rgba(255, 255, 255, 0.696),rgb(13, 255, 0));
-    font-size: 1.5em;
-    background-clip: text;
-    color: transparent;
-    position:absolute;
-    width: fit-content;
-    top: 2.5em;
-    margin-left:4em ;
-}
-.title{
+#div{
+    top:0.5em;
+    position: absolute;
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 150px;
-    position:absolute;
-    top:0;
-    /* border: 1px solid white; */
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+    background: linear-gradient(45deg,rgb(177, 0, 204),rgba(255, 192, 203, 0.856));
+    background-clip: text;
+    color: transparent;
+    font-size: 3em;
+    font-style:italic;
+    overflow: hidden;
 }
+#div::before{
+    z-index: -10;
+    position: absolute;
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 500px;
+    background: linear-gradient(rgba(255, 255, 255, 0.91),purple);
+    animation: infinite linear 13s rot;
+}
+#div::after{
+    position: absolute;
+    content: '';
+    inset: 1px;
+    z-index: -5;
+    background-color: #0D1F21;
+}
+
+@keyframes rot {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(180deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    75%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
