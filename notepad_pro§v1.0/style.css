@@ -98,7 +98,7 @@ body{
 
 #status{
     position:absolute;
-    top:6.5em;
+    top:6.3em;
     color:rgb(255, 255, 255);
     left:1.6em;
    
@@ -261,13 +261,13 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 10em;
+    width: 5em;
     height: 3em;
     border-radius: 2rem;
     background-color:#0D1F21;
     z-index: -1;
     left: 1em;
-    top: 5.4em;
+    top: 5.5em;
     overflow: hidden;
 }
 #loading::before{

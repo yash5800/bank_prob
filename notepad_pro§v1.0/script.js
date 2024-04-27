@@ -157,7 +157,7 @@ function del(){
         return null;
     }
     status.style.color = "red";
-    status.innerHTML = "Throwing to Void";
+    status.innerHTML = "Deleting";
     document.getElementById('loading').style.display = 'flex';
     (async ()=>{
      await fetch(`https://first-api-1.onrender.com/wipe/${inputval}`)
@@ -167,7 +167,7 @@ function del(){
        })
        .then(data =>{
         document.getElementById('loading').style.display = 'none';
-        status.innerHTML = "Thrown to Void" ;
+        status.innerHTML = "Deleted";
         location.reload();
         console.log("Data :",data.key);
        })
