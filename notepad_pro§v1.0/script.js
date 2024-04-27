@@ -34,7 +34,7 @@ function save(){
     const send = JSON.stringify({key:inputval,val:hash});
     console.log(send)
     status.style.color = "yellow";
-    status.innerHTML = "Sending To Dimension";
+    status.innerHTML = "Saving";
     document.getElementById('loading').style.display = 'flex';
     (async ()=>{
      await fetch(`https://first-api-1.onrender.com/make_wet/${send}`)
@@ -44,7 +44,7 @@ function save(){
        })
        .then(data =>{
         document.getElementById('loading').style.display = 'none';
-        status.innerHTML = "Sended To Dimension";
+        status.innerHTML = "Saved";
         console.log("Data :",data.key);
        })
        .catch(error =>{ 
@@ -91,6 +91,7 @@ function change() {
         loading.style.display = 'none';
         document.body.style.overflow = 'auto';
         if (check !== "" && check !== "created !!") {
+            document.getElementById('priv').style.display = 'none';
             console.log("Data is not empty");
             status.innerHTML = "Fetched Data";
             text.innerHTML = decodeBase64(check);
@@ -98,6 +99,7 @@ function change() {
             next.style.display = 'block';
             size.innerHTML = `${text.value.length}/11500`;
         } else {
+            document.getElementById('priv').style.display = 'none';
             console.log("Data is empty")
             status.innerHTML = "Here! you have it";
             text.innerHTML = '';
@@ -107,7 +109,6 @@ function change() {
         }
        })
        .catch(error =>{ 
-        document.body.style.overflow = 'auto';
         loading.style.display = 'none';
         status.innerHTML = "Try again";
         console.log("error found",error);
