@@ -465,7 +465,6 @@ body{
     top: 66em;
     width: 100%;
     height: 4em;
-    border-radius: 50px 1px ;
     background-color: rgb(255, 255, 255, 0.5005);
     left: 0;
     backdrop-filter: blur(2px);
