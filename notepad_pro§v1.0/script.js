@@ -101,7 +101,7 @@ function change() {
         } else {
             document.getElementById('priv').style.display = 'none';
             console.log("Data is empty")
-            status.innerHTML = "Here! you have it";
+            status.innerHTML = "It's you's Buddy...";
             text.innerHTML = '';
             main.style.display = 'none';
             next.style.display = 'block';
