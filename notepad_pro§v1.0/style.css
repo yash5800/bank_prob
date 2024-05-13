@@ -165,8 +165,11 @@ body{
 
 
 @media (max-width:550px) {
+    .next #nextbut{
+        left:45%;
+    }
     .next #del{
-        left: 90%;   
+        left: 87%;   
     }
 }
 .next #del:hover{
