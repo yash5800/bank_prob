@@ -193,6 +193,7 @@ body{
 }
 
 .main-sub1{
+    font-family: cursive;
     display: flex;
     justify-content: center;
     align-items: center;
