@@ -188,6 +188,36 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+.main-sub1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 74em;
+    width: 100%;
+    height: 6em;
+    background:linear-gradient(90deg,rgb(255, 0, 0, 0.2),black,rgba(191, 0, 255, 0.2));
+    left: 0;
+    backdrop-filter: blur(2px);
+    color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    
+}
+
+.main-sub1 p{
+    position: absolute;
+    font-size: 0.5em;
+    bottom: 1em;
+}
+
+.main-sub1 h5:hover{
+    cursor: pointer;
+    color: rgb(0, 184, 184);
+}
+
+
 .main{
     position: absolute;
     top: 50%;
@@ -439,7 +469,6 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 200%;
     width: 100%;
     height: 6em;
     background:linear-gradient(90deg,rgb(255, 0, 0, 0.2),black,rgba(191, 0, 255, 0.2));
@@ -450,6 +479,7 @@ body{
     border-top-right-radius: 1rem;
     
 }
+
 
 .main-sub p{
     position: absolute;
@@ -462,7 +492,7 @@ body{
     color: rgb(0, 184, 184);
 }
  
-.main-sub .inner {
+.inner {
     position: absolute;
     text-align: center;
     width: 100px;
@@ -470,7 +500,7 @@ body{
     top:0.8em;
 }
 
-.main-sub .inner svg{
+.inner svg{
     position: relative;
     margin-top: 10px;
     width: 25px;
@@ -478,18 +508,18 @@ body{
     transform: scale(1);
 }
 
-.main-sub .inner svg:hover{
+.inner svg:hover{
     cursor: pointer;
     transform: scale(1.15);
 }
 
-.main-sub .inner u:hover{
+.inner u:hover{
      cursor: pointer;
      color: rgb(0, 184, 184);
 }
 
 
-.main-sub .inner .line {
+.inner .line {
     position: absolute;
     margin-top: 0.2em;
     width: 100%;
@@ -497,7 +527,7 @@ body{
     background-color: rgb(221, 0, 255);
 }
 
-.main-sub .inner .line::before {
+.inner .line::before {
     position: absolute;
     content: '';
     width: 20px;
@@ -569,39 +599,3 @@ body{
 
 }
 
-
-@media (max-width:1440px) {
-    .main-sub{
-        top: 150%;
-    }
-}
-
-@media (max-width:1024px) {
-    .main-sub{
-        top: 180%;
-    }
-}
-
-@media (max-width:960px) {
-    .main-sub{
-        top: 230%;
-    }
-}
-
-@media (max-width:675px) {
-    .main-sub{
-        top: 250%;
-    }
-}
-
-@media (max-width:460px) {
-    .main-sub{
-        top: 280%;
-    }
-}
-
-@media (max-width:319px) {
-    .main-sub{
-        top: 380%;
-    }
-}
