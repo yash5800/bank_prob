@@ -472,11 +472,10 @@ body{
 
 .main-sub .inner svg{
     position: relative;
-    margin-top: 6px;
+    margin-top: 10px;
     width: 25px;
     height: 25px;
     transform: scale(1);
-    /* box-shadow: 6px 6px 20px 1px rgba(230, 243, 255, 0.845); */
 }
 
 .main-sub .inner svg:hover{
@@ -488,6 +487,40 @@ body{
      cursor: pointer;
      color: rgb(0, 184, 184);
 }
+
+
+.main-sub .inner .line {
+    position: absolute;
+    margin-top: 0.2em;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(221, 0, 255);
+}
+
+.main-sub .inner .line::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 1px;
+    background-color: rgb(221, 0, 255);
+    left: 0%;
+    animation: 2.5s infinite lr linear;
+    box-shadow: 0 0 10px 1px  rgb(221, 0, 255);
+
+}
+
+@keyframes lr {
+    0% {
+        left: 0%;
+    }
+    50% {
+        left: 80%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
 
 .nd{
     border-radius: 50%;
@@ -531,12 +564,25 @@ body{
         padding: 6px 10px;
         margin: 20px 0 0 6.95em;
     }
- 
+    
+   
 
 }
 
-@media (max-width:1000px) {
+@media (max-width:1120px) {
     .main-sub{
-        top: 270%;
+        top: 230%;
+    }
+}
+
+@media (max-width:675px) {
+    .main-sub{
+        top: 250%;
+    }
+}
+
+@media (max-width:460px) {
+    .main-sub{
+        top: 280%;
     }
 }
