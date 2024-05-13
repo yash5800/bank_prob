@@ -586,3 +586,9 @@ body{
         top: 280%;
     }
 }
+
+@media (max-width:319px) {
+    .main-sub{
+        top: 380%;
+    }
+}
