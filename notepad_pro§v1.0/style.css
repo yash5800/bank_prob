@@ -518,7 +518,7 @@ body{
     width: 100px;
     height: 50px;
     top:-0.8em;
-    left: 10%;
+    right: 10%;
 }
 .outer .inner1 {
     position: absolute;
@@ -526,7 +526,7 @@ body{
     width: 100px;
     height: 50px;
     top:-0.8em;
-    right: 10%;
+    left: 10%;
 }
 
 .inner1 svg,.inner2 svg{
