@@ -191,7 +191,6 @@ body{
 .main{
     position: absolute;
     top: 50%;
-    display: block;
     height: 200px;
     width: 350px;
     color: white;
@@ -199,7 +198,7 @@ body{
     font-size: 0.98em;
     border-radius: 1rem;
     animation: infinite linear 3s fade;  
-    border: 0.1px white solid; 
+    border: 0.1px white solid;
 }
 .main:hover{
     animation-play-state: paused;
@@ -216,10 +215,8 @@ body{
     }
 }
 .main h3{
-    position: absolute;
     text-align: center;
     margin-top: 1.5em;
-    width: 19em;
 }
 .main #span1{
     background: linear-gradient(45deg,blue,aqua);
@@ -232,27 +229,20 @@ body{
     color: transparent;
 }
 .main input{
-    position: absolute;
     padding: 8px 20px ;
     border-radius: 1rem;
     border: none;
-    margin-top:6.5em;
-    left: 50%;
-    transform: translate(-50%,-50%);
     outline: none;
+    margin: 20px 0 0 5.5em;
 }
 .main input:hover{
     border: 2px solid green;
 }
 #button{
-    position: absolute;
     padding: 8px 20px ;
     border-radius: 1rem;
-    border: none;
-    margin-top:10em;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
+    border: none;  
+    margin: 20px 0 0 10em;
 }
 #button:hover{
     background:linear-gradient(45deg,yellow,orange) ;
@@ -449,25 +439,58 @@ body{
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 5em;
+    top: 200%;
     width: 100%;
-    height: 4em;
-    background-color: rgb(255, 255, 255, 0.5005);
+    height: 6em;
+    background:linear-gradient(90deg,rgb(255, 0, 0, 0.2),black,rgba(191, 0, 255, 0.2));
     left: 0;
     backdrop-filter: blur(2px);
+    color: white;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    
 }
 
-.main-sub1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main-sub p{
     position: absolute;
-    top: 66em;
-    width: 100%;
-    height: 4em;
-    background-color: rgb(255, 255, 255, 0.5005);
-    left: 0;
-    backdrop-filter: blur(2px);
+    font-size: 0.5em;
+    bottom: 1em;
+}
+
+.main-sub h5:hover{
+    cursor: pointer;
+    color: rgb(0, 184, 184);
+}
+ 
+.main-sub .inner {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    top:0.8em;
+}
+
+.main-sub .inner svg{
+    position: relative;
+    margin-top: 6px;
+    width: 25px;
+    height: 25px;
+    transform: scale(1);
+    /* box-shadow: 6px 6px 20px 1px rgba(230, 243, 255, 0.845); */
+}
+
+.main-sub .inner svg:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.main-sub .inner u:hover{
+     cursor: pointer;
+     color: rgb(0, 184, 184);
+}
+
+.nd{
+    border-radius: 50%;
 }
 
  @media (max-width:375px) {
@@ -488,5 +511,32 @@ body{
 
     #mail_info p{
         top: 59.9em;
+    }
+    
+    .main{
+        height: 150px;
+        width: 250px;
+    }
+
+    .main h3{
+        font-size: small;
+    }
+
+    .main input{
+        padding: 4px 10px ;
+        margin: 20px 0 0 30px;
+    }
+
+    #button {
+        padding: 6px 10px;
+        margin: 20px 0 0 6.95em;
+    }
+ 
+
+}
+
+@media (max-width:1000px) {
+    .main-sub{
+        top: 270%;
     }
 }
